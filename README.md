@@ -51,3 +51,20 @@ Formalpara is used to represent one paragraph that is associated with one title
   </para>
 </formalpara>
 ```
+
+#### Representing an ordered list where there is one title and several para in each list item
+This one is tricky to represent in docbook 5, so we use the following 'hack' where we give the first para a role attribute = title.
+```
+<orderedlist>
+    <listitem>
+        <para role="title">This should be the first list item's title</para>
+        <para>first para</para>
+        <para>second para</para>
+    </listitem>
+    <listitem>
+        <para role="title">This should be the second list item's title</para>
+        <para> a para</para>
+    </listitem>
+</orderedlist>
+```
+
